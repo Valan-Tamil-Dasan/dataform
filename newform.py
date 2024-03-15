@@ -256,7 +256,7 @@ def fetch_user_details(username):
 
 
 app = Flask(__name__)
-CORS(app, origins='http://localhost:3000', supports_credentials=True)
+CORS(app, origins=['https://lib-front-woad.vercel.app/', 'http://localhost:3000'], supports_credentials=True)
 
 
 @app.route('/fetch_leetcode' , methods = ['POST'])
@@ -310,5 +310,6 @@ def fetch_github():
 
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', 5000))  # if 'PORT' env var is not found, default to 5000
+    
     app.run(host='0.0.0.0', port=port)
         
