@@ -2,7 +2,7 @@ import backoff
 import requests
 from bs4 import BeautifulSoup as bs
 from datetime import datetime, timedelta
-
+import os
 from flask import Flask , render_template , request , jsonify
 
 from flask_cors import CORS
@@ -307,6 +307,8 @@ def fetch_github():
         return jsonify({'message' : response})
 
 
+
 if __name__ == '__main__':
-        app.run(debug=True)
+    port = int(os.environ.get('PORT', 5000))  # if 'PORT' env var is not found, default to 5000
+    app.run(host='0.0.0.0', port=port)
         
