@@ -256,7 +256,7 @@ def fetch_user_details(username):
 
 
 app = Flask(__name__)
-CORS(app, origins='http://localhost:3000', supports_credentials=True)
+CORS(app)
 
 
 @app.route('/fetch_leetcode' , methods = ['POST'])
