@@ -237,7 +237,9 @@ def codeForces(username):
 
 
 def fetch_user_details(username):
-    token = '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'
+    
+    token = os.environ.get('token')
+
     headers = {
         'Authorization': f'token {token}',
         'Accept': 'application/vnd.github.v3+json',
@@ -256,8 +258,7 @@ def fetch_user_details(username):
 
 
 app = Flask(__name__)
-CORS(app, origins=['https://lib-front-woad.vercel.app/', 'http://localhost:3000'], supports_credentials=True)
-
+CORS(app , supports_credentials=True)
 
 @app.route('/fetch_leetcode' , methods = ['POST'])
 def fetch_leetcode():
