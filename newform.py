@@ -236,24 +236,6 @@ def codeForces(username):
 
 
 
-def fetch_user_details(username):
-    
-    
-    headers = {
-        'Authorization': f'token {token}',
-        'Accept': 'application/vnd.github.v3+json',
-    }
-    user_url = f'https://api.github.com/users/{username}'
-    response = requests.get(user_url, headers=headers)
-
-    if response.status_code == 200:
-        return response.json() , True
-    else:
-        return {} ,False
-
-
-
-
 
 
 app = Flask(__name__)
