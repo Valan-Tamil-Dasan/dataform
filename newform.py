@@ -237,7 +237,7 @@ def codeForces(username):
 
 
 def fetch_user_details(username):
-    token = os.environ.get('token')
+    
     
     headers = {
         'Authorization': f'token {token}',
