@@ -237,9 +237,7 @@ def codeForces(username):
 
 
 def fetch_user_details(username):
-    
-    token = os.environ.get('token')
-
+    token = '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'
     headers = {
         'Authorization': f'token {token}',
         'Accept': 'application/vnd.github.v3+json',
